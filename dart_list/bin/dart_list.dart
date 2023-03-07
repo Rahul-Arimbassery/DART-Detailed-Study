@@ -191,11 +191,107 @@
 //   print(average);
 // }
 
-// List Methods................
-//1.Sort
+// create a fixed length list
+
 void main(List<String> args) {
-  var array = [2, 5, 1, 0, 8];
-  array.sort();
-  print(array);
-  print(array.reversed);
+  List<String> myList = List.filled(3, 'hi');
+  List<String> hiList = List.generate(3, (index) => 'hi');
+  List<String> helloList = [];
+  List<List<String>> newList = List.generate(3, (i) => List.filled(3, 'hi'));
+  List<List<String>> newList1 =
+      List.generate(3, (index) => List.generate(2, (index) => 'hello'));
+  var empty = List.empty(); // this is fixed length
+  var empty1 = List.empty(growable: true); // now its growable
+
+  var ele = List.unmodifiable([1,2,3]);
+
+  print(myList);
+  print(hiList);
+  print(helloList);
+  //myList.add('hello');  Error can not add to fixed length list
+  hiList.add('hello');
+  print(hiList);
+  helloList.add('hello');
+  print(helloList);
+  print(newList);
+  newList[0][0] = 'kiii';
+  print(newList);
+
+  newList1[0][0] = 'kiiiko';
+  print(newList1);
+  print(empty);
+  //empty.add(5);
+  print(empty);
+  print(empty1);
+  empty1.add(5);
+  print(empty1);
+
+  print(ele);
+  //ele.add(4);  can not add to an unmidified list
+  print(ele);
 }
+
+
+
+
+
+// // List Methods................
+
+// void main(List<String> args) {
+// //1.Sort
+//   var array = [2, 5, 1, 0, 8];
+//   var array1 = [1, 2, 3, 4, 5];
+//   array.sort();
+//   print(array);
+//   print(array.reversed);
+
+//   List<String> name = ['bun', 'apple', 'orange'];
+//   name.sort();
+//   print(name);
+//   print(name.reversed);
+
+// //2.Sublist
+//   print(name.sublist(0));
+//   print(name.sublist(0, 1));
+//   print(name.sublist(1, 2));
+
+// //3.add
+//   array.add(1);
+//   print(array);
+//   array.addAll([0, 0, 50]);
+//   print(array);
+
+// //4.any
+//   print(array.any((element) => element >= 50));
+
+// //5.clear
+//   //array.clear();
+//   print(array);
+
+// //6.contains
+//   print(array.contains(8));
+//   bool z = array.contains(8);
+//   if (z == true) {
+//     print('rahul');
+//   }
+
+// //7.elementAt
+//   print(array.elementAt(4));
+//   int q = array.elementAt(3);
+//   print(q);
+
+// //8.fillRAnge
+//   var newlist = List.filled(5, 0);
+//   print(newlist);
+//   newlist.fillRange(0, 5, 8);
+//   print(newlist);
+
+// //9.forEach
+//   var list = [1, 2, 3, 4, 5, 6, 7, 8];
+//   list.forEach(print);
+
+// //10.getRange
+//   print(list.getRange(0, 4));
+
+//   print(list.indexOf(2));
+// }
