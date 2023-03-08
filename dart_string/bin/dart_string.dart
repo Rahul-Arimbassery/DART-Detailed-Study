@@ -123,6 +123,29 @@ hello''';
   replacingtest = replacingtest.replaceAll('t', 'j');
   print(replacingtest);
 
+// List to string conversion
+  var name = ['hi', 'hello', 'ji'];
+  print(name);
+  print(name.join(' '));
+
+  var result = "";
+  for (var i = 0; i < name.length; i++) {
+    result = result + name[i].toString();
+  }
+  print(result);
+
 //finished somewhat
 
+//Write a function to replace each alphabet in the given string with another
+//alphabet occurring at the n-th position from each of them.
+  String just = "welcomeallofyou";
+  String assignment = "welcomeallofyou";
+  print(assignment.length);
+  var list = List.filled(assignment.length - 3, '0', growable: true);
+  print(list);
+  for (var i = 0; i < assignment.length - 3; i++) {
+    list[i] = just[i + 3];
+  }
+  String finalone = list.join(); // Convert list to string using list join.
+  print(finalone);
 }
