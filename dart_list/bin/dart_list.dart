@@ -193,6 +193,10 @@
 
 // create a fixed length list
 
+import 'dart:js_util';
+
+import 'package:test/test.dart';
+
 void main(List<String> args) {
   List<String> myList = List.filled(3, 'hi');
   List<String> hiList = List.generate(3, (index) => 'hi');
@@ -203,7 +207,8 @@ void main(List<String> args) {
   var empty = List.empty(); // this is fixed length
   var empty1 = List.empty(growable: true); // now its growable
 
-  var ele = List.unmodifiable([1,2,3]);
+  var ele = List.unmodifiable([1, 2, 3]);
+  var ele1 = List.from([2, 2, 3]);
 
   print(myList);
   print(hiList);
@@ -229,11 +234,83 @@ void main(List<String> args) {
   print(ele);
   //ele.add(4);  can not add to an unmidified list
   print(ele);
+
+  print(ele1);
+  ele1.forEach(print);
+  newList.forEach((n) => {print(newList)});
+  // myList.add('li');
+  print(myList);
+
+  //Combine Lists in Dart - concatination of list
+  var l1 = [1, 2, 3, 4];
+  var l2 = [1, 2, 3, 4];
+  var l3 = l1 + l2;
+  var l4 = List.from(l1) // from ..addAll
+    ..addAll(l3)
+    ..addAll(l2);
+  var l5 = [l1, l2].expand((element) => element); // expand operator
+  var l6 = [...l1, ...l2]; //Spread operator ...
+  print(l3);
+  print(l4);
+  print(l5);
+  print(l6);
+
+  //Access items from List in Dart
+  var accessitem = [1, 2, 3, 4, 5];
+  print(accessitem[0]);
+  accessitem.forEach(print);
+  print(accessitem.isEmpty);
+  print(accessitem.isNotEmpty);
+  print(accessitem.length);
+  print(accessitem.elementAt(0));
+  accessitem[0] = 50;
+  print(accessitem);
+  accessitem.add(50);
+  print(accessitem);
+  var newone = [5, 6, 4, 5, 6];
+  accessitem.addAll(newone);
+  print(accessitem);
+  print(accessitem + newone);
+  accessitem.insert(0, 500);
+  print(accessitem);
+  accessitem.insertAll(0, newone);
+  print(accessitem);
+
+  //Remove items from List
+  accessitem.remove(500);
+  accessitem.removeAt(0);
+  accessitem.removeRange(7, 10);
+  accessitem.removeLast();
+  accessitem.removeWhere((element) => element == 6);
+  print(accessitem);
+  accessitem.clear();
+  print(accessitem);
+
+  //Update List item in Dart
+  var arraynew = [8, 9, 6, 5, 4];
+  arraynew.replaceRange(0, 1, [4, 4, 4, 4]);
+  print(arraynew);
+
+  //Iterate over List  - each element printed seperatly
+  var iterationlist = [8, 5, 2, 0, 1];
+  iterationlist.forEach(print);
+  iterationlist.forEach((element) => print(element));
+
+  var here = iterationlist.iterator;
+  while (here.moveNext()) {
+    print(here.current);
+  }
+
+  var iterationlist1 = [0, 0, 0, 0, 0];
+  iterationlist1.every((element) {
+    print(element);
+    return true;
+  });
+
+  for (var element in iterationlist1) {
+    print(element);
+  }
 }
-
-
-
-
 
 // // List Methods................
 
