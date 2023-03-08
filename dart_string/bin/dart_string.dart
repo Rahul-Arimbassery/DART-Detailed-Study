@@ -103,5 +103,26 @@ hello''';
   print(rahul.padRight(10));
   print(rahul.padRight(10, '*'));
 
- print(rahul.padRight(10,'rahul')); 
+  print(rahul.padRight(10, 'rahul'));
+
+// Dart/Flutter Trim String
+  var trimtest = "          rahul      ";
+  print(trimtest.trim());
+  print(trimtest.trimLeft());
+  print(trimtest.trimRight());
+
+// Dart/Flutter String Replace Methods
+
+// For the First match
+  var replacingtest = 'welcome to ootty';
+  print(replacingtest.replaceFirst('o', 'E'));
+  print(replacingtest.replaceFirst('o', 'E', 4));
+  print(replacingtest.replaceRange(0, 7, 'nice'));
+  print(replacingtest.replaceFirstMapped('w', (match) => 'm'));
+  print(replacingtest.replaceAll('t', 'j'));
+  replacingtest = replacingtest.replaceAll('t', 'j');
+  print(replacingtest);
+
+//finished somewhat
+
 }
