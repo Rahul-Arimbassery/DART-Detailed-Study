@@ -493,7 +493,7 @@ void removeDuplicates(Map<String, dynamic> head) {
 
 void main(List<String> arguments) {
   // Create the linked list
-  Map<String, dynamic> head = {'data': 1, 'next': null};
+  Map<String, dynamic> head =  {'data': 1, 'next': null};
   Map<String, dynamic> node2 = {'data': 2, 'next': null};
   Map<String, dynamic> node3 = {'data': 2, 'next': null};
   Map<String, dynamic> node4 = {'data': 3, 'next': null};
